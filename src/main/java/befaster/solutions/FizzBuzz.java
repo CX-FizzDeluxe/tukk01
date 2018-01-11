@@ -21,7 +21,12 @@ public class FizzBuzz {
                     return getBasicResult(number);
                 }
             } else {
-                return addStringAfter(getBasicResult(number), "fake deluxe");
+                if (number % 3 == 0 && s.contains("3")||
+                        number % 5 == 0 && s.contains("5")) {
+                    return addStringAfter(getBasicResult(number), "fake deluxe");
+                } else {
+                    return getBasicResult(number);
+                }
             }
         }
     }
