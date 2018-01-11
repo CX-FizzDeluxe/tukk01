@@ -10,12 +10,7 @@ public class FizzBuzz {
 
         try {
             Integer.parseInt(getBasicResult(number));
-
-            if (number % 2 == 0) {
-                return "deluxe";
-            } else {
-                return "fake deluxe";
-            }
+            return "" + number;
         } catch (NumberFormatException e) {
 
             if (number % 2 == 0) {
