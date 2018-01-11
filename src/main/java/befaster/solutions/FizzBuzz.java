@@ -12,9 +12,9 @@ public class FizzBuzz {
 
             try {
                 Integer.parseInt(getBasicResult(number));
-                return getBasicResult(number) + " deluxe";
-            } catch (NumberFormatException e) {
                 return "deluxe";
+            } catch (NumberFormatException e) {
+                return getBasicResult(number) + " deluxe";
             }
         }
 
