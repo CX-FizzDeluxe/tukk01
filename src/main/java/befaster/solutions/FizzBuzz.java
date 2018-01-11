@@ -3,49 +3,55 @@ package befaster.solutions;
 public class FizzBuzz {
 
     public static String s;
-    
+
     public static String fizzBuzz(Integer number) {
 
         s = String.valueOf(number);
-        
+
         if (number > 10 && hasIdenticalDigits()) {
-            return getBasicResult(number) + " deluxe";
+
+            try {
+                Integer.parseInt(getBasicResult(number));
+                return getBasicResult(number) + " deluxe";
+            } catch (NumberFormatException e) {
+                return "deluxe";
+            }
         }
-        
+
         return getBasicResult(number);
     }
-    
+
     public static String getBasicResult(Integer number) {
-        
-        if ((number % 3 == 0 || s.contains("3")) && 
-               !(number % 5 == 0 || s.contains("5"))) {
-            
+
+        if ((number % 3 == 0 || s.contains("3"))
+                && !(number % 5 == 0 || s.contains("5"))) {
+
             return "fizz";
-        } else if (!(number % 3 == 0 || s.contains("3")) && 
-               (number % 5 == 0 || s.contains("5"))) {
-            
+        } else if (!(number % 3 == 0 || s.contains("3"))
+                && (number % 5 == 0 || s.contains("5"))) {
+
             return "buzz";
-        } else if ((number % 3 == 0 || s.contains("3")) && 
-               (number % 5 == 0 || s.contains("5"))) {
-            
+        } else if ((number % 3 == 0 || s.contains("3"))
+                && (number % 5 == 0 || s.contains("5"))) {
+
             return "fizz buzz";
         }
 
         return "" + number;
     }
-    
+
     public static boolean hasIdenticalDigits() {
-        
+
         char[] chars = s.toCharArray();
-        
-        for (int i = 0; i < chars.length; i++) {            
+
+        for (int i = 0; i < chars.length; i++) {
             if (chars[0] != chars[i]) {
                 return false;
             }
-            
+
         }
-        
+
         return true;
-        
+
     }
 }
