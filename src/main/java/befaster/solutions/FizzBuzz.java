@@ -12,9 +12,19 @@ public class FizzBuzz {
 
             try {
                 Integer.parseInt(getBasicResult(number));
-                return "deluxe";
+                
+                if (number % 2 == 0) {
+                    return "deluxe";
+                } else {
+                    return "fake deluxe";
+                }            
             } catch (NumberFormatException e) {
-                return getBasicResult(number) + " deluxe";
+                
+                if (number % 2 == 0) {
+                    return addStringAfter(getBasicResult(number), "deluxe");
+                } else {
+                    return addStringAfter(getBasicResult(number), "fake deluxe");
+                }
             }
         }
 
@@ -53,5 +63,9 @@ public class FizzBuzz {
 
         return true;
 
+    }
+    
+    public static String addStringAfter(String source, String toAdd) {
+        return source + " " + toAdd;
     }
 }
