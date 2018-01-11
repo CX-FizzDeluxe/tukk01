@@ -8,27 +8,22 @@ public class FizzBuzz {
 
         s = String.valueOf(number);
 
-        if (number > 10 && hasIdenticalDigits()) {
+        try {
+            Integer.parseInt(getBasicResult(number));
 
-            try {
-                Integer.parseInt(getBasicResult(number));
-                
-                if (number % 2 == 0) {
-                    return "deluxe";
-                } else {
-                    return "fake deluxe";
-                }            
-            } catch (NumberFormatException e) {
-                
-                if (number % 2 == 0) {
-                    return addStringAfter(getBasicResult(number), "deluxe");
-                } else {
-                    return addStringAfter(getBasicResult(number), "fake deluxe");
-                }
+            if (number % 2 == 0) {
+                return "deluxe";
+            } else {
+                return "fake deluxe";
+            }
+        } catch (NumberFormatException e) {
+
+            if (number % 2 == 0) {
+                return addStringAfter(getBasicResult(number), "deluxe");
+            } else {
+                return addStringAfter(getBasicResult(number), "fake deluxe");
             }
         }
-
-        return getBasicResult(number);
     }
 
     public static String getBasicResult(Integer number) {
@@ -64,7 +59,7 @@ public class FizzBuzz {
         return true;
 
     }
-    
+
     public static String addStringAfter(String source, String toAdd) {
         return source + " " + toAdd;
     }
