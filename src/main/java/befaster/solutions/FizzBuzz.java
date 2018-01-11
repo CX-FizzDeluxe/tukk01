@@ -23,16 +23,16 @@ public class FizzBuzz {
 
     public static String getBasicResult(Integer number) {
 
-        if ((number % 3 == 0 || s.contains("3"))
-                && !(number % 5 == 0 || s.contains("5"))) {
+        if ((number % 3 == 0 && s.contains("3"))
+                && !(number % 5 == 0 && s.contains("5"))) {
 
             return "fizz";
-        } else if (!(number % 3 == 0 || s.contains("3"))
-                && (number % 5 == 0 || s.contains("5"))) {
+        } else if (!(number % 3 == 0 && s.contains("3"))
+                && (number % 5 == 0 && s.contains("5"))) {
 
             return "buzz";
-        } else if ((number % 3 == 0 || s.contains("3"))
-                && (number % 5 == 0 || s.contains("5"))) {
+        } else if ((number % 3 == 0 && s.contains("3"))
+                && (number % 5 == 0 && s.contains("5"))) {
 
             return "fizz buzz";
         }
