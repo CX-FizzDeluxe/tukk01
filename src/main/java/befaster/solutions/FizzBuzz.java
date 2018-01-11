@@ -2,9 +2,20 @@ package befaster.solutions;
 
 public class FizzBuzz {
 
+    public static String s;
+    
     public static String fizzBuzz(Integer number) {
 
-        String s = String.valueOf(number);
+        s = String.valueOf(number);
+        
+        if (number > 10 && hasIdenticalDigits()) {
+            return getBasicResult(number) + " deluxe";
+        }
+        
+        return getBasicResult(number);
+    }
+    
+    public static String getBasicResult(Integer number) {
         
         if ((number % 3 == 0 || s.contains("3")) && 
                !(number % 5 == 0 || s.contains("5"))) {
@@ -21,5 +32,20 @@ public class FizzBuzz {
         }
 
         return "" + number;
+    }
+    
+    public static boolean hasIdenticalDigits() {
+        
+        char[] chars = s.toCharArray();
+        
+        for (int i = 0; i < chars.length; i++) {            
+            if (chars[0] != chars[i]) {
+                return false;
+            }
+            
+        }
+        
+        return true;
+        
     }
 }
