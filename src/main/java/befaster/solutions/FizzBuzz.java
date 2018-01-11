@@ -20,6 +20,6 @@ public class FizzBuzz {
             return "fizz buzz";
         }
 
-        return null;
+        return "" + number;
     }
 }
